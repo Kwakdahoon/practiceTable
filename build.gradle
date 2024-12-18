@@ -1,0 +1,63 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.0'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.table'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(23)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Spring Boot Web Starter (웹 애플리케이션 개발을 위한 기본 의존성)
+	// HTTP 요청, REST 컨트롤러, 내장 톰캣 지원
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Spring Boot JDBC Starter (JDBC 설정 지원)
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+	// MyBatis Spring Boot Starter (MyBatis와 Spring Boot 통합)
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+
+	// MySQL JDBC 드라이버 (MySQL 데이터베이스 연결)
+	implementation 'mysql:mysql-connector-java:8.0.33'
+
+	// Thymeleaf (HTML 템플릿 엔진)
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+	// Spring Data JPA (JPA를 통한 데이터베이스 ORM 지원)
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// Lombok: Getter, Setter, 생성자 등을 자동 생성하는 라이브러리
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// Spring Boot DevTools (개발 편의 기능 제공 - Hot Reload 등)
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// Spring Boot Starter Test (테스트 라이브러리 제공)
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// JUnit 플랫폼 런처 (테스트 실행 시 필요)
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
