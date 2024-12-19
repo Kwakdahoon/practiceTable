@@ -16,23 +16,23 @@ $(document).ready(function () {
         }
 
         // AJAX 요청 (예시)
-//        $.ajax({
-//            type: "POST",
-//            url: "/submitBoard",
-//            contentType: "application/json",
-//            data: JSON.stringify({
-//                title: title,
-//                writer: writer,
-//                content: content,
-//            }),
-//            success: function (response) {
-//                alert("게시글이 성공적으로 전송되었습니다!");
-//                console.log("서버 응답:", response);
-//            },
-//            error: function (error) {
-//                alert("전송 중 오류가 발생했습니다.");
-//                console.log("오류:", error);
-//            },
-//        });
+        $.ajax({
+            type: "POST",
+            url: "/board/write",
+            contentType: "application/json",
+            data: JSON.stringify({
+                title: title,
+                writer: writer,
+                content: content,
+            }),
+            success: function (response) {
+                alert("성공성공")
+                console.log("서버 응답:", response);
+            },
+            error: function (error) {
+                alert("다메다메")
+                console.log("오류:", error);
+            },
+        });
     });
 });
