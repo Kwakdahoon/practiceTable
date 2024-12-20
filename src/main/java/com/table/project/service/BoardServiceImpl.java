@@ -9,5 +9,7 @@ public class BoardServiceImpl implements BoardService{
     @Override
     public void saveBoard(BoardDTO boardDTO) {
 
+
+        
     }
 }
