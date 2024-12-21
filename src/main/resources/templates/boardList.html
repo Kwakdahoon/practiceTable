@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>게시글 목록</title>
 </head>
 <body>
 <div class="container">
-    <a href="/board/write"> <img src="http://www.tvdaily.co.kr/upimages/gisaimg/202409/1725611869_1725018.jpg"> </a>
+    <div>
+        <a href="/board/write"> <img style = "width:50px; height:50px;" src="http://www.tvdaily.co.kr/upimages/gisaimg/202409/1725611869_1725018.jpg"> </a>
+    </div>
+    <div>
+        <table border="1">
+            <thead>
+            <tr>
+                <th>글번호</th>
+                <th>제목</th>
+                <th>내용</th>
+                <th>작성자</th>
+                <th>작성일</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="board : ${boardList}">
+            <td th:text="${board.boardId}"></td>
+            <td th:text="${board.title}"></td>
+            <td th:text="${board.content}"></td>
+            <td th:text="${board.writer}"></td>
+            <td th:text="${board.dow}"></td>
+
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
 </div>
+
 </body>
 </html>

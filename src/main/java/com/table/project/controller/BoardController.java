@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/board")
@@ -26,7 +26,10 @@ public class BoardController {
 
     // 게시판 목록
     @GetMapping("/list")
-    public String hello() {
+    public String hello(Model model) {
+        List<BoardDTO> boardList = bService.getBoard();
+        model.addAttribute("boardList", boardList);
+
         return "boardList";
     }
 
@@ -38,7 +41,7 @@ public class BoardController {
 
     @PostMapping("/write")
     @ResponseBody
-    public ResponseEntity<String> writeBoard(BoardDTO boardDTO) {
+    public ResponseEntity<String> writeBoard(@RequestBody BoardDTO boardDTO) {
 
         try{
         bService.saveBoard(boardDTO);

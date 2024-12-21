@@ -3,4 +3,11 @@
 
 <mapper namespace="com.table.project.mapper.BoardMapper">
 
+    <insert id="insertBoard" parameterType="com.table.project.model.BoardDTO">
+        insert into board (title, content, writer, dow) values (#{title}, #{content}, #{writer}, NOW())
+    </insert>
+
+    <select id="getBoard" resultType="com.table.project.model.BoardDTO">
+        select * from board order by dow desc
+    </select>
 </mapper>

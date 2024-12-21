@@ -3,14 +3,15 @@ package com.table.project.model;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import java.sql.Timestamp;
 
 @Getter
 @Setter
 @ToString
 public class BoardDTO {
-    public String boardId;
+    public int boardId;
     public String title;
     public String content;
-    public String dow;
+    public Timestamp dow;
     public String writer;
 }
