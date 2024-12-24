@@ -50,4 +50,10 @@ public class BoardController {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("오류발생");
         }
     }
+
+    @GetMapping("/modify")
+    public String viewModifyBoard() {
+
+        return "boardModify";
+    }
 }

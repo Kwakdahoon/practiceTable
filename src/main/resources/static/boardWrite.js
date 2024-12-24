@@ -28,6 +28,7 @@ $(document).ready(function () {
             success: function (response) {
                 alert("성공성공")
                 console.log("서버 응답:", response);
+                window.location.href="/board/list";
             },
             error: function (error) {
                 alert("다메다메")
