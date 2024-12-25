@@ -51,9 +51,19 @@ public class BoardController {
         }
     }
 
+    // 수정 페이지 이동
     @GetMapping("/modify")
     public String viewModifyBoard() {
 
         return "boardModify";
+    }
+
+    // 게시물 상세 페이지 이동
+    @GetMapping("/detail")
+    public String viewDetailBoard(Model model, @RequestParam(value = "boardId", required = false) int boardId) {
+
+        
+
+        return "boardDetail";
     }
 }

@@ -15,7 +15,6 @@
             <tr>
                 <th>글번호</th>
                 <th>제목</th>
-                <th>내용</th>
                 <th>작성자</th>
                 <th>작성일</th>
                 <th>작업</th>
@@ -24,11 +23,17 @@
             <tbody>
             <tr th:each="board : ${boardList}">
             <td th:text="${board.boardId}"></td>
-            <td th:text="${board.title}"></td>
-            <td th:text="${board.content}"></td>
+            <td th:text="${board.content}"> <a href ="/board/detail?boardId=#{boardId}"></a> </td>
             <td th:text="${board.writer}"></td>
-            <td th:text="${board.dow}"></td>
-            <td><a href="https://www.flaticon.com/kr/free-icons/-"></a> 삭제</td>
+            <td th:text="${#dates.format(board.dow, 'yyyy년 MM월 dd일 HH시 mm분 ss초')}"></td>
+            <td>
+                <a href ="/board/modify">
+                    <img style="width:25px; height:25ps;" src="/modify.png">
+                </a>
+                <a href ="/board/delete">
+                    <img style="width:25px; height:25ps;" src="/delete.png">
+                </a>
+            </td>
 
             </tr>
             </tbody>
