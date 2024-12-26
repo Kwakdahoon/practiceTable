@@ -23,4 +23,10 @@ public class BoardServiceImpl implements BoardService{
     public List<BoardDTO> getBoard() {
         return bMapper.getBoard();
     }
+
+    // 게시글 상세 데이터 가져오는
+    @Override
+    public BoardDTO boardDetailData(int boardId) {
+        return bMapper.getBoardDetail(boardId);
+    }
 }

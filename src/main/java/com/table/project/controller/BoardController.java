@@ -60,11 +60,12 @@ public class BoardController {
 
     // 게시물 상세 페이지 이동
     @GetMapping("/detail")
-    public String viewDetailBoard(Model model, @RequestParam(value = "boardId", required = false) int boardId) {
+    public String viewDetailBoard(Model model, @RequestParam(value = "boardId", required = true) int boardId) {
 
+        // 게시글 상세 데이터 가져옴
+        BoardDTO boardDTO = bService.boardDetailData(boardId);
 
-
-
+        model.addAttribute("board", boardDTO);
 
         return "boardDetail";
     }

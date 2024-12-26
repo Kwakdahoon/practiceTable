@@ -12,4 +12,7 @@ public interface BoardMapper {
 
     // 게시글 가져와
     List<BoardDTO> getBoard();
+
+    // 게시글 상세 가져와
+    BoardDTO getBoardDetail(int boardId);
 }

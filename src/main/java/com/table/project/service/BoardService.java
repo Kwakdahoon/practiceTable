@@ -11,4 +11,7 @@ public interface BoardService {
 
     // 게시글 데이터 가져오기
     List<BoardDTO> getBoard();
+
+    // 게시글 상세
+    BoardDTO boardDetailData(int boardId);
 }

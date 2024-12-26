@@ -10,4 +10,8 @@
     <select id="getBoard" resultType="com.table.project.model.BoardDTO">
         select * from board order by dow desc
     </select>
+
+    <select id="getBoardDetail" parameterType="int" resultType="com.table.project.model.BoardDTO">
+        select * from board where boardId = #{boardId}
+    </select>
 </mapper>
