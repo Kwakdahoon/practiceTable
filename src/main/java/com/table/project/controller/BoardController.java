@@ -62,6 +62,8 @@ public class BoardController {
     @GetMapping("/detail")
     public String viewDetailBoard(Model model, @RequestParam(value = "boardId", required = false) int boardId) {
 
+
+
         
 
         return "boardDetail";
