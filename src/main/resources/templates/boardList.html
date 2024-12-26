@@ -23,7 +23,7 @@
             <tbody>
             <tr th:each="board : ${boardList}">
             <td th:text="${board.boardId}"></td>
-            <td th:text="${board.content}"> <a href ="/board/detail?boardId=#{boardId}"></a> </td>
+            <td th:text="${board.content}"></td>
             <td th:text="${board.writer}"></td>
             <td th:text="${#dates.format(board.dow, 'yyyy년 MM월 dd일 HH시 mm분 ss초')}"></td>
             <td>
