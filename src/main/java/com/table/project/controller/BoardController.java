@@ -58,6 +58,11 @@ public class BoardController {
         return "boardModify";
     }
 
+    @PostMapping("/modify")
+    public String modifyBoard() {
+        return null;
+    }
+
     // 게시물 상세 페이지 이동
     @GetMapping("/detail")
     public String viewDetailBoard(Model model, @RequestParam(value = "boardId", required = true) int boardId) {
