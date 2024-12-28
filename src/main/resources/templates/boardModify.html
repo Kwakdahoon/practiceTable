@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>수정페이지</title>
 </head>
 <body>
     <img src="https://blog.kakaocdn.net/dn/bS1G7N/btshar7GwLq/8JH5XEc5u2keFqZmOD9RS0/img.gif">
-
+    <body>
+    <div class="container">
+        <div>
+            제목 : <input type="text" id="title" th:value="${board.title}">
+        </div>
+        <div>
+            작성자 : <input type="text" id="writer" th:value="${board.writer}" readonly>
+        </div>
+        <div>
+            내용 : <input type="text" id="content" th:value="${board.content}">
+        </div>
+        <div>
+            <input type="submit" id="" value="수정완료">
+        </div>
+    </div>
+    </body>
 </body>
 </html>

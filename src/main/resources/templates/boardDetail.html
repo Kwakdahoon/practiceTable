@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>게시물 상세</title>
 </head>
 <body>
-
+<div>
+    제목 : <input type="text" id="title" th:value="${board.title}" readonly>
+</div>
+<div>
+    작성자 : <input type="text" id="writer" th:value="${board.writer}" readonly>
+</div>
+<div>
+    내용 : <input type="text" id="content" th:value="${board.content}" readonly>
+</div>
+<div>
+    <a href ="/board/list">목록</a>
+</div>
 </body>
 </html>

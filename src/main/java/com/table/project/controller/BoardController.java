@@ -53,8 +53,11 @@ public class BoardController {
 
     // 수정 페이지 이동
     @GetMapping("/modify")
-    public String viewModifyBoard() {
+    public String viewModifyBoard(Model model, @RequestParam(value = "boardId", required = true) int boardId) {
 
+        BoardDTO boardDTO = bService.boardDetailData(boardId);
+
+        model.addAttribute("board", boardDTO);
         return "boardModify";
     }
 
