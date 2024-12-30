@@ -8,7 +8,7 @@
 <body>
 <div class="container">
     <div>
-        <a href="/board/write"> <img src="http://www.tvdaily.co.kr/upimages/gisaimg/202409/1725611869_1725018.jpg"> </a>
+        <a href="/board/write"> <img src="http://www.tvdaily.co.kr/upimages/gisaimg/202409/1725611869_1725018.jpg" onerror="this.style.display='none"  alt="게시글 작성"> </a>
     </div>
     <div>
         <table border="1">
@@ -33,10 +33,10 @@
             <td th:text="${#dates.format(board.dow, 'yyyy-MM-dd')}"></td>
             <td>
                 <a th:href ="@{/board/modify(boardId=${board.boardId})}">
-                    <img style="width:25px; height:25ps;" src="/modify.png">
+                    <img style="width:25px; height:25ps;" src="/modify.png" onerror="this.style.display='none';">
                 </a>
                 <a href ="/board/delete">
-                    <img style="width:25px; height:25ps;" src="/delete.png">
+                    <img style="width:25px; height:25ps;" src="/delete.png" onerror="this.remove ? this.remove() : this.removeNode();"/> <!-- dom 자체삭제 -->
                 </a>
             </td>
 
